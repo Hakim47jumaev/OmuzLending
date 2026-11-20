@@ -1,0 +1,401 @@
+/* Hero: в светлой теме — фиолетовая сцена со своими значениями токенов. */
+.hero {
+  overflow: visible !important;
+  border-bottom: 0 !important;
+}
+
+:global(.omuz:not(.dark)) .hero {
+  --bg: #4a3aff;
+  --stage: #4a3aff;
+  --tx: #ffffff;
+  --tx2: rgba(255, 255, 255, 0.82);
+  --dv: rgba(255, 255, 255, 0.22);
+  --pr: #ffffff;
+  --pr10: rgba(255, 255, 255, 0.18);
+  --btn: #ffffff;
+  --onbtn: #4a3aff;
+  --logo: #ffffff;
+  --rotc: #ffa800;
+  --chip: rgba(255, 255, 255, 0.14);
+  background: #4a3aff;
+}
+
+:global(.omuz.dark) .hero {
+  background: #0b0f19;
+}
+
+.inner {
+  position: relative;
+}
+
+.herowrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 56px var(--gutter) 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+}
+
+@media (min-width: 801px) {
+  .herowrap {
+    padding-top: 150px;
+  }
+}
+
+.h1 {
+  margin: 0;
+  font-size: clamp(34px, 5.2vw, 64px);
+  line-height: 1.1;
+  font-weight: 700;
+  color: var(--tx);
+  max-width: 880px;
+  text-align: center;
+}
+
+/* Четыре заголовка в одной ячейке грида, видимым остаётся один. */
+.hv {
+  display: grid;
+}
+
+.v {
+  grid-area: 1 / 1;
+  opacity: 0;
+  animation: hvr 24s infinite both;
+}
+
+.v2 {
+  animation-delay: 6s;
+}
+
+.v3 {
+  animation-delay: 12s;
+}
+
+.v4 {
+  animation-delay: 18s;
+}
+
+.word {
+  display: inline-block;
+  white-space: nowrap;
+  opacity: 0;
+  animation: hch 24s infinite both;
+}
+
+@keyframes hvr {
+  0% {
+    opacity: 0;
+  }
+  0.5%,
+  22% {
+    opacity: 1;
+  }
+  25%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hch {
+  0% {
+    opacity: 0;
+  }
+  0.1%,
+  22% {
+    opacity: 1;
+  }
+  25%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Подчёркивание «пером» под заголовком. */
+.pen {
+  display: block;
+  width: clamp(180px, 36%, 380px);
+  height: 14px;
+  margin-top: -10px;
+  overflow: visible;
+}
+
+.pen path {
+  fill: none;
+  stroke: #ffa800;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: penw 6s ease-in-out infinite;
+}
+
+:global(.omuz.dark) .pen path {
+  stroke: var(--pr);
+}
+
+@keyframes penw {
+  0%,
+  30% {
+    stroke-dashoffset: 1;
+    opacity: 1;
+  }
+  52%,
+  88% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  96%,
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+.sub {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--tx2);
+  max-width: 600px;
+  text-align: center;
+}
+
+/* Карточка-журнал заходит на следующую секцию на 120px. */
+.cardwrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  margin-bottom: -120px;
+  position: relative;
+  z-index: 3;
+}
+
+.reg {
+  position: relative;
+  text-align: left;
+  width: 100%;
+  max-width: 640px;
+  background: var(--paper);
+  border: 1px solid var(--dv);
+  border-radius: 16px;
+  padding: 16px 16px 14px;
+  box-shadow: 0 24px 60px -30px rgba(18, 24, 40, 0.35);
+}
+
+:global(.omuz:not(.dark)) .reg {
+  --tx: #121828;
+  --tx2: #65748b;
+  --dv: #e6e8f0;
+  --bg: #f4f4f5;
+  --paper: #ffffff;
+  --pr: #4a3aff;
+  --pr10: rgba(74, 58, 255, 0.1);
+  box-shadow: 0 30px 70px -30px rgba(10, 6, 80, 0.6);
+}
+
+.rh {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--tx2);
+  margin-bottom: 12px;
+}
+
+.rh b {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--tx);
+}
+
+.live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rg {
+  display: grid;
+  grid-template-columns: minmax(72px, 1.5fr) repeat(5, minmax(0, 1fr)) minmax(48px, 0.9fr);
+  gap: 6px;
+  align-items: center;
+  font-size: 12px;
+}
+
+.d {
+  color: var(--tx2);
+  text-align: center;
+  font-weight: 500;
+}
+
+.n {
+  font-weight: 500;
+  color: var(--tx);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.c {
+  height: 30px;
+  border-radius: 8px;
+  background: var(--bg);
+  position: relative;
+}
+
+.c::after {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 30px;
+  opacity: 0;
+  animation: regin 10s ease-in-out infinite;
+  animation-delay: var(--d, 0s);
+}
+
+.cp::after {
+  content: "\2713";
+  background: rgba(20, 184, 166, 0.14);
+  color: #14b8a6;
+}
+
+.ca::after {
+  content: "\2013";
+  background: rgba(232, 124, 66, 0.14);
+  color: #e87c42;
+}
+
+.cg::after {
+  content: "5";
+  background: var(--pr10);
+  color: var(--pr);
+}
+
+@keyframes regin {
+  0%,
+  6% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  12%,
+  82% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  94%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.pay {
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 999px;
+  padding: 6px 0;
+  background: var(--bg);
+  color: var(--tx2);
+}
+
+.ok {
+  background: rgba(20, 184, 166, 0.14);
+  color: #14b8a6;
+}
+
+.due {
+  background: rgba(232, 124, 66, 0.14);
+  color: #e87c42;
+}
+
+.rf {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--dv);
+  font-size: 12px;
+  color: var(--tx2);
+}
+
+.pct {
+  font-weight: 600;
+  color: var(--tx);
+}
+
+.bar {
+  flex: 1;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.bar i {
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+  background: #14b8a6;
+  transform-origin: left center;
+  animation: grow 1.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes grow {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+.chip {
+  position: absolute;
+  right: -6px;
+  bottom: -18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--paper);
+  border: 1px solid var(--dv);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--tx);
+  box-shadow: 0 12px 30px -12px rgba(18, 24, 40, 0.35);
+  animation: floaty 5s ease-in-out infinite;
+}
+
+@media (max-width: 560px) {
+  .reg {
+    padding: 12px;
+  }
+  .rg {
+    gap: 4px;
+    grid-template-columns: minmax(56px, 1.4fr) repeat(5, minmax(0, 1fr)) 40px;
+  }
+  .chip {
+    right: 4px;
+  }
+}
+
+/* Без анимаций: показываем первый заголовок и заполненный журнал. */
+@media (prefers-reduced-motion: reduce) {
+  .v1,
+  .v1 .word {
+    opacity: 1 !important;
+  }
+  .c::after {
+    opacity: 1;
+  }
+  .pen path {
+    stroke-dashoffset: 0;
+  }
+}

@@ -1,0 +1,388 @@
+/*
+ * Глобальные стили: токены тем, базовые элементы и общие классы, которые используются
+ * в нескольких секциях. Значения перенесены из <helmet><style> макета Main.dc.html.
+ * Стили конкретных секций — в CSS Modules рядом с компонентами.
+ */
+
+@property --n {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f4f4f5;
+}
+
+/* ---------- Токены ---------- */
+.omuz {
+  --pr: #4a3aff;
+  --pr10: rgba(74, 58, 255, 0.1);
+  --btn: #4a3aff;
+  --onbtn: #ffffff;
+  --onpr: #ffffff;
+  --bg: #f4f4f5;
+  --stage: #f4f4f5;
+  --paper: #ffffff;
+  --tx: #121828;
+  --tx2: #65748b;
+  --dv: #e6e8f0;
+  --logo: #4a3aff;
+  --logotri: #ffa800;
+  --ok: #14b8a6;
+  --okx: #0e8074;
+  --rotc: #4a3aff;
+  --grid: rgba(18, 24, 40, 0.07);
+  --grid2: rgba(18, 24, 40, 0.12);
+  --chip: rgba(18, 24, 40, 0.06);
+  --warn-bg: rgba(232, 124, 66, 0.12);
+  --warn-tx: #e87c42;
+  --gutter: clamp(16px, 2vw, 24px);
+
+  font-family: var(--font-montserrat), Montserrat, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--tx);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: clip;
+}
+
+.omuz.dark {
+  --pr: #0ea5e9;
+  --pr10: rgba(14, 165, 233, 0.16);
+  --btn: #4a3aff;
+  --onbtn: #ffffff;
+  --onpr: #0b0f19;
+  --bg: #0b0f19;
+  --stage: #0b0f19;
+  --paper: #111827;
+  --tx: #edf2f7;
+  --tx2: #a0aec0;
+  --dv: #2d3748;
+  --logo: #ffffff;
+  --logotri: #ffffff;
+  --rotc: #0ea5e9;
+  --grid: rgba(255, 255, 255, 0.05);
+  --grid2: rgba(255, 255, 255, 0.14);
+  --chip: rgba(255, 255, 255, 0.08);
+  --warn-bg: rgba(232, 124, 66, 0.18);
+  --warn-tx: #e87c42;
+}
+
+/* ---------- Базовые элементы ---------- */
+.omuz a {
+  color: var(--pr);
+}
+
+.omuz h1,
+.omuz h2,
+.omuz h3 {
+  letter-spacing: -0.01em;
+}
+
+.omuz input,
+.omuz select {
+  font: 400 14px var(--font-montserrat), Montserrat, sans-serif;
+  color: var(--tx);
+  background: var(--bg);
+  border: 1px solid var(--dv);
+  border-radius: 10px;
+  height: 48px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.omuz input {
+  padding: 0 16px;
+}
+
+.omuz select {
+  padding: 0 12px;
+}
+
+.omuz input:focus,
+.omuz select:focus {
+  outline: 2px solid var(--pr);
+  outline-offset: 0;
+}
+
+.omuz a:focus-visible,
+.omuz button:focus-visible {
+  outline: 2px solid var(--pr);
+  outline-offset: 2px;
+}
+
+@media (min-width: 801px) {
+  .omuz section {
+    scroll-margin-top: 96px;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Раскладка ---------- */
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  box-sizing: border-box;
+}
+
+.h2 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.lead {
+  margin: 0;
+  font-size: 16px;
+  color: var(--tx2);
+  line-height: 1.6;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (max-width: 700px) {
+  .omuz h2 {
+    font-size: clamp(26px, 7vw, 40px) !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+  }
+}
+
+/* «Сцена» — секция с фоном stage и декоративными шарами. */
+.stage {
+  background: var(--stage);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--dv);
+}
+
+.z {
+  position: relative;
+  z-index: 1;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.omuz.dark .orb {
+  opacity: 1;
+}
+
+.orb-a {
+  width: 620px;
+  height: 620px;
+  left: -160px;
+  top: -200px;
+  background: radial-gradient(circle at 35% 35%, rgba(74, 58, 255, 0.8), rgba(74, 58, 255, 0) 68%);
+  animation: drift 18s ease-in-out infinite alternate;
+}
+
+.orb-b {
+  width: 520px;
+  height: 520px;
+  right: -120px;
+  top: 140px;
+  background: radial-gradient(circle at 60% 40%, rgba(33, 150, 243, 0.3), rgba(33, 150, 243, 0) 68%);
+  animation: drift 22s ease-in-out infinite alternate-reverse;
+}
+
+/* ---------- Кнопки и общие элементы ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  padding: 0 28px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--btn);
+  color: var(--onbtn) !important;
+  font: 600 14px var(--font-montserrat), Montserrat, sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.btn:hover {
+  opacity: 0.92;
+}
+
+.btn.nocap {
+  text-transform: none;
+}
+
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: skewX(-20deg);
+  animation: sweep 3.5s ease-in-out infinite;
+}
+
+.lift {
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+.lift:hover {
+  transform: translateY(-4px);
+}
+
+.stage .lift,
+.omuz.dark .lift {
+  box-shadow: none;
+}
+
+.float {
+  animation: floaty 6s ease-in-out infinite;
+}
+
+.livedot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #14b8a6;
+  animation: ping 1.8s ease-out infinite;
+}
+
+/* Квадратная кнопка-степпер (калькулятор, стрелки карусели). */
+.stp {
+  appearance: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--dv);
+  background: var(--paper);
+  color: var(--tx);
+  font: 600 20px var(--font-montserrat), Montserrat, sans-serif;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.stp:hover {
+  border-color: var(--pr);
+  transform: translateY(-2px);
+}
+
+.soon {
+  display: inline-block;
+  background: var(--warn-bg);
+  color: var(--warn-tx);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* Появление при прокрутке (где поддерживается scroll-driven animations). */
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: rise linear both;
+    animation-timeline: view();
+    animation-range: entry 5% entry 45%;
+  }
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes drift {
+  to {
+    transform: translate(70px, 50px) scale(1.12);
+  }
+}
+
+@keyframes sweep {
+  0%,
+  60% {
+    left: -60%;
+  }
+  100% {
+    left: 130%;
+  }
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes ping {
+  0% {
+    box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(20, 184, 166, 0);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .omuz *,
+  .omuz *::before,
+  .omuz *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

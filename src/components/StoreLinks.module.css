@@ -1,0 +1,48 @@
+.stores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.start {
+  justify-content: flex-start;
+  margin-top: 4px;
+}
+
+.stores .store {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 10px;
+  background: #0b0f19;
+  color: #ffffff;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.store:hover {
+  opacity: 0.9;
+}
+
+.st {
+  display: flex;
+  flex-direction: column;
+}
+
+.st small {
+  font-size: 10px;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+@media (max-width: 700px) {
+  .start {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,59 @@
+.totop {
+  position: fixed;
+  right: clamp(16px, 2.5vw, 32px);
+  bottom: clamp(16px, 2.5vw, 32px);
+  z-index: 50;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--pr);
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(74, 58, 255, 0.35);
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
+}
+
+.totop:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(74, 58, 255, 0.45);
+}
+
+.arrow {
+  animation: upbob 1.6s ease-in-out infinite;
+}
+
+@keyframes upbob {
+  0%,
+  100% {
+    transform: translateY(2px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes ttin {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+    pointer-events: none;
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Кнопка появляется после первых 500px прокрутки (где поддерживается). */
+@supports (animation-timeline: scroll()) {
+  .totop {
+    animation: ttin linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 500px;
+  }
+}

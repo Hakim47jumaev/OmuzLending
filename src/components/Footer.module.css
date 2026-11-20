@@ -1,0 +1,84 @@
+.footer {
+  background: var(--paper);
+  border-top: 1px solid var(--dv);
+}
+
+.ftin {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px var(--gutter) 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.brand {
+  flex: 2 1 280px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tagline {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--tx2);
+  max-width: 340px;
+}
+
+.col {
+  flex: 1 1 160px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contactCol {
+  flex-basis: 200px;
+}
+
+.colTitle {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.col .link {
+  font-size: 14px;
+  color: var(--tx2);
+  text-decoration: none;
+}
+
+.ftcr {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px var(--gutter) 32px;
+  box-sizing: border-box;
+  border-top: 1px solid var(--dv);
+}
+
+.ftcr span {
+  font-size: 12px;
+  color: var(--tx2);
+}
+
+@media (max-width: 700px) {
+  .ftin {
+    justify-content: center;
+    text-align: center;
+    gap: 28px;
+  }
+  .ftin > * {
+    flex: 1 1 100%;
+    align-items: center;
+  }
+  .tagline {
+    max-width: none;
+  }
+  .ftcr {
+    text-align: center;
+    padding-bottom: 88px;
+  }
+}

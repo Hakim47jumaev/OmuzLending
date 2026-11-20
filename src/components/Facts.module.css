@@ -1,0 +1,58 @@
+/* Верхний отступ учитывает карточку hero, которая заходит на эту секцию на 120px. */
+.facts {
+  padding: 168px 0 0;
+}
+
+.list {
+  max-width: 1100px;
+  margin: 0 auto;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 64px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+  min-width: 160px;
+}
+
+/* Счётчик из макета: CSS-переменная --n анимируется от 0 и выводится через counter(). */
+.num {
+  counter-reset: num var(--n);
+  animation: cnt 2.2s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--pr);
+}
+
+.num::after {
+  content: counter(num);
+}
+
+@keyframes cnt {
+  from {
+    --n: 0;
+  }
+}
+
+.label {
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--tx2);
+}
+
+@media (max-width: 560px) {
+  .list {
+    gap: 20px 32px;
+  }
+  .num {
+    font-size: 40px;
+  }
+}

@@ -1,0 +1,45 @@
+.logo {
+  display: block;
+  width: auto;
+}
+
+.ink {
+  fill: var(--logo);
+}
+
+.tri {
+  fill: var(--logotri);
+  transform-box: fill-box;
+  transform-origin: 50% 60%;
+}
+
+.animated .tri {
+  animation: tripop 1.1s 0.25s cubic-bezier(0.3, 1.6, 0.5, 1) both;
+}
+
+.animated:hover .tri {
+  animation: triflip 0.8s cubic-bezier(0.3, 1.5, 0.5, 1);
+}
+
+@keyframes tripop {
+  0% {
+    transform: translateY(-14px) scale(0.2) rotate(-90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes triflip {
+  0% {
+    transform: none;
+  }
+  60% {
+    transform: translateY(-4px) scale(1.25) rotate(200deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

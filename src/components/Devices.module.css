@@ -1,0 +1,176 @@
+.section {
+  padding: 72px 0 40px;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.sub {
+  max-width: 680px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 48px;
+}
+
+.laptopCol {
+  flex: 1 1 560px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tab {
+  appearance: none;
+  font: inherit;
+  border: 1px solid var(--dv);
+  background: var(--paper);
+  color: var(--tx2);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab.on {
+  background: var(--btn);
+  border-color: var(--btn);
+  color: var(--onbtn);
+}
+
+.laptop {
+  background: #111827;
+  border-radius: 16px 16px 6px 6px;
+  padding: 10px 10px 12px;
+  box-shadow: 0 30px 60px -30px rgba(14, 18, 32, 0.6);
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+  padding: 2px 4px 10px;
+}
+
+.dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff5f57;
+}
+
+.dots span:nth-child(2) {
+  background: #febc2e;
+}
+
+.dots span:nth-child(3) {
+  background: #28c840;
+}
+
+.screen {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1440 / 1024;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #f2f4f5;
+}
+
+.shot {
+  object-fit: cover;
+  object-position: top;
+  transition: opacity 0.45s ease;
+}
+
+.caption {
+  font-size: 12px;
+  color: var(--tx2);
+}
+
+.phoneCol {
+  flex: 0 1 280px;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 0 auto;
+}
+
+.phone {
+  width: 250px;
+  background: #111827;
+  border-radius: 38px;
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 30px 60px -30px rgba(14, 18, 32, 0.7);
+  animation: floaty 6s ease-in-out infinite;
+}
+
+/* Два экрана телефона плавно сменяют друг друга. */
+.fade2 {
+  position: relative;
+  width: 230px;
+  height: 490px;
+  border-radius: 30px;
+  overflow: hidden;
+  background: #f2f4f5;
+}
+
+.fade2 img {
+  object-fit: cover;
+  object-position: top;
+  animation: xf 8s ease-in-out infinite;
+}
+
+.fade2 img:nth-child(2) {
+  animation-delay: -4s;
+}
+
+@keyframes xf {
+  0%,
+  42% {
+    opacity: 1;
+  }
+  58%,
+  92% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.points {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+}
+
+.points li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+}
+
+.points svg {
+  flex: none;
+}

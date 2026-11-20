@@ -1,0 +1,88 @@
+.section {
+  padding: 72px 0 24px;
+}
+
+.inner {
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.title {
+  font-size: 36px;
+  text-align: center;
+}
+
+.cmpwrap {
+  background: var(--paper);
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cmp {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.cmp th,
+.cmp td {
+  padding: 14px 16px;
+  text-align: center;
+  border-top: 1px solid var(--dv);
+}
+
+.cmp tbody th {
+  font-weight: 400;
+}
+
+.cmp thead th {
+  border-top: 0;
+  background: var(--bg);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.cmp .first {
+  text-align: left;
+  width: 38%;
+}
+
+.cmp thead th.first {
+  color: var(--pr);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.cmp .hl {
+  background: rgba(74, 58, 255, 0.06);
+}
+
+.cmp thead th.hl {
+  color: var(--pr);
+  background: rgba(74, 58, 255, 0.1);
+}
+
+.cmp td.ok {
+  color: var(--tx);
+  font-weight: 600;
+}
+
+.cmp td.dim {
+  color: var(--tx2);
+}
+
+.cmp td.txt {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.soon {
+  font-size: 11px;
+  font-weight: 600;
+  margin-left: 6px;
+}
