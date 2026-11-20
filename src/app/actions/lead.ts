@@ -24,9 +24,7 @@ export async function submitLead(_prev: LeadState, formData: FormData): Promise<
 
   const name = read(formData, "name");
   const phone = read(formData, "phone");
-  const email = read(formData, "email");
   if (!name || phone.replace(/\D/g, "").length < 7) return { status: "invalid" };
-  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return { status: "invalid" };
 
   const token = process.env.TELEGRAM_BOT_TOKEN?.trim();
   const rawChat = process.env.TELEGRAM_CHAT_ID?.trim();
@@ -44,7 +42,6 @@ export async function submitLead(_prev: LeadState, formData: FormData): Promise<
     "📬 New Contact Form Submission",
     `👤 Full Name: ${name}`,
     `📞 Phone: ${phone}`,
-    `📧 Email: ${email || "—"}`,
     `🏫 Academy: ${read(formData, "academy") || "—"}`,
     `📦 Plan: ${read(formData, "plan") || d.planUnsure}`,
     `🎓 Students: ${pick(d.optStudents, read(formData, "students"))}`,

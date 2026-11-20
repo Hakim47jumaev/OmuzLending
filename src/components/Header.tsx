@@ -56,6 +56,8 @@ export default function Header({ locale, t }: { locale: Locale; t: Content }) {
                 key={l.code}
                 href={`/${l.code}`}
                 hrefLang={l.code}
+                // Смена языка не должна прокручивать страницу наверх.
+                scroll={false}
                 className={`${styles.lg} ${l.code === locale ? styles.on : ""}`}
                 aria-current={l.code === locale ? "page" : undefined}
               >

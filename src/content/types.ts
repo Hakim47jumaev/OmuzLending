@@ -157,7 +157,6 @@ export interface Content {
     sub: string;
     name: string;
     phone: string;
-    email: string;
     academy: string;
     plan: string;
     planUnsure: string;

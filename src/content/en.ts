@@ -55,8 +55,8 @@ const en: Content = {
     rows: [
       { name: "Checking homework", before: "3–7 min per student", after: "1–3 min", delta: "−60%" },
       { name: "Signing a contract", before: "under 5 minutes", after: "under 1 minute", delta: "−80%" },
-      { name: "Preparing reports", before: "5–10 hours", after: "under 15 minutes", delta: "−95%" },
-      { name: "Seeing how the center performs", before: "half a day – a day", after: "under 5 minutes", delta: "−98%" },
+      { name: "Preparing reports", before: "5–10 hours", after: "under 1 minute", delta: "−95%" },
+      { name: "Seeing how the center performs", before: "half a day – a day", after: "under 1 minute", delta: "−98%" },
     ],
   },
 
@@ -256,8 +256,11 @@ const en: Content = {
         name: "Saidumron Rahmonov",
         role: "Smart",
       },
-      // TODO: в макете цитата-заглушка — заменить реальным отзывом клиента.
-      { text: "[Client quote]", name: "Hasanjon Aliev", role: "ILM OMUZ" },
+      {
+        text: "All the data is in one place — tracking students and payments has become much easier.",
+        name: "Hasanjon Aliev",
+        role: "ILM OMUZ",
+      },
     ],
   },
 
@@ -295,7 +298,6 @@ const en: Content = {
     sub: "Within one day you get a full demo of all 15 modules.",
     name: "Full name",
     phone: "Phone number",
-    email: "Email",
     academy: "Academy name",
     plan: "Plan",
     planUnsure: "Not chosen yet",

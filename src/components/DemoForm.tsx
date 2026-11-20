@@ -42,9 +42,6 @@ export default function DemoForm({ t }: { t: Content }) {
             <Field id="f-phone" label={d.phone}>
               <input id="f-phone" name="phone" type="tel" autoComplete="tel" required maxLength={200} />
             </Field>
-            <Field id="f-mail" label={d.email}>
-              <input id="f-mail" name="email" type="email" autoComplete="email" maxLength={200} />
-            </Field>
             <Field id="f-acad" label={d.academy}>
               <input id="f-acad" name="academy" type="text" autoComplete="organization" maxLength={200} />
             </Field>
