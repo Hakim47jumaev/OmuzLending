@@ -5,7 +5,11 @@ const nextConfig: NextConfig = {
   partialPrefetching: true,
   async redirects() {
     // Язык по умолчанию — таджикский (как в макете).
-    return [{ source: "/", destination: "/tg", permanent: false }];
+    return [
+      { source: "/", destination: "/tj", permanent: false },
+      // Старый адрес таджикской версии.
+      { source: "/tg", destination: "/tj", permanent: true },
+    ];
   },
 };
 

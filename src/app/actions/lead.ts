@@ -15,7 +15,7 @@ const pick = (list: string[], raw: string) => {
   return Number.isInteger(i) && i >= 0 && i < list.length ? list[i] : raw;
 };
 
-const LANG_NAMES: Record<string, string> = { tg: "Tajik", ru: "Russian", en: "English" };
+const LANG_NAMES: Record<string, string> = { tj: "Tajik", ru: "Russian", en: "English" };
 
 /** Отправляет заявку с формы в Telegram-группу (TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID в .env). */
 export async function submitLead(_prev: LeadState, formData: FormData): Promise<LeadState> {

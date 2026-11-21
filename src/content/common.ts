@@ -30,9 +30,9 @@ export const BRAND = "Omuz";
 
 /** Скриншоты продукта (вынесены из base64 макета в public/images). */
 export const IMAGES = {
-  dash: { src: "/images/dash.webp", width: 1300, height: 1717 },
-  stud: { src: "/images/stud.webp", width: 1300, height: 924 },
-  jour: { src: "/images/jour.webp", width: 1300, height: 924 },
+  dash: { src: "/images/dash-v2.webp", width: 1300, height: 1717 },
+  stud: { src: "/images/stud-v2.webp", width: 1300, height: 924 },
+  jour: { src: "/images/jour-v2.webp", width: 1300, height: 924 },
   mdash: { src: "/images/mdash.webp", width: 360, height: 800 },
   mjour: { src: "/images/mjour.webp", width: 360, height: 1232 },
 } as const;

@@ -3,11 +3,12 @@ import ru from "./ru";
 import tg from "./tg";
 import type { Content } from "./types";
 
-export const LOCALES = ["tg", "ru", "en"] as const;
+/** Сегменты URL. Таджикский живёт на /tj (код языка в HTML и hreflang — "tg", см. htmlLang). */
+export const LOCALES = ["tj", "ru", "en"] as const;
 export type Locale = (typeof LOCALES)[number];
-export const DEFAULT_LOCALE: Locale = "tg";
+export const DEFAULT_LOCALE: Locale = "tj";
 
-const CONTENT: Record<Locale, Content> = { tg, ru, en };
+const CONTENT: Record<Locale, Content> = { tj: tg, ru, en };
 
 export const hasLocale = (value: string): value is Locale => (LOCALES as readonly string[]).includes(value);
 

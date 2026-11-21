@@ -7,7 +7,7 @@ Next.js (App Router, TypeScript), стили — CSS Modules + `src/app/[lang]/g
 
 ```bash
 npm install
-npm run dev     # http://localhost:3000 → редирект на /tg
+npm run dev     # http://localhost:3000 → редирект на /tj
 npm run build
 npm run lint
 ```
@@ -16,7 +16,7 @@ npm run lint
 
 ## Языки
 
-Маршруты `/tg`, `/ru`, `/en`. Тексты лежат в `src/content/{tg,ru,en}.ts` по общему типу `src/content/types.ts`.
+Маршруты `/tj`, `/ru`, `/en` (старый `/tg` перенаправляется на `/tj`; код языка в HTML — `tg`). Тексты лежат в `src/content/{tg,ru,en}.ts` по общему типу `src/content/types.ts`.
 Данные, одинаковые для всех языков (контакты, ссылки на сторы, видео, картинки, демо-данные hero), — в `src/content/common.ts`.
 Цены и правила калькулятора — в `src/lib/pricing.ts`.
 
